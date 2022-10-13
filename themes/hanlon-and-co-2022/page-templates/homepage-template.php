@@ -113,7 +113,7 @@
 					<h2 class="bc-feature-sub-header__heading"><?php the_field('other-areas-of-practice-title'); ?></h2>
 				</div><!-- // .bc-feature-header__col -->
 			</div><!-- // .bc-feature-header -->
-			<div class="bc-content-component bc-areas-of-practice__other ">
+			<div class="bc-content-component bc-areas-of-practice__other">
 				<?php $this_area_of_practice = get_field('other-areas-of-practice#1'); ?>
 				<div class="bc-areas-of-practice__other__area bc-areas-of-practice__litigation bc-match-height">
 					<div class="bc-areas-of-practice__other__area__header">
