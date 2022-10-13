@@ -1,0 +1,219 @@
+0000.000 (0) Opened log file at time: Wed, 12 Oct 2022 17:05:57 +0000 on http://localhost/hanlon-and-co-wp
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.22.23 WP: 6.0.2 PHP: 7.1.30 (apache2handler, Darwin Michaels-MacBook-Pro-4.local 15.6.0 Darwin Kernel Version 15.6.0: Thu Jun 21 20:07:40 PDT 2018; root:xnu-3248.73.11~1/RELEASE_X86_64 x86_64) MySQL: 10.3.16-MariaDB (max packet size=1048576) WPLANG: en_US Server: Apache/2.4.39 (Unix) OpenSSL/1.0.2s PHP/7.1.30 mod_perl/2.0.8-dev Perl/v5.16.3 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33.1M | 2M) multisite: N openssl: OpenSSL 1.0.2s  28 May 2019 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.003 (0) Free space on disk containing Updraft's temporary directory: 754.6 MB
+0000.007 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.009 (0) Semaphore (fd, wp_options) being initialised
+0000.012 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.016 (0) Set semaphore last lock (fd) time to 2022-10-12 17:05:57
+0000.016 (0) Semaphore lock (fd) complete
+0000.020 (0) Backup run: resumption=0, nonce=18955daba5f3, file_nonce=18955daba5f3 begun at=1665594357 (0s ago), job type=backup
+0000.022 (0) Scheduling a resumption (1) after 300 seconds (1665594657) in case this run gets aborted
+0000.036 (0) Checking if we have a zip executable available
+0000.038 (0) Testing: /usr/bin/zip
+0000.045 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.046 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.047 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.048 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.049 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.061 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.063 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.072 (0) Working binary zip found: /usr/bin/zip
+0000.074 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.075 (0) Creation of backups of directories: beginning
+0000.078 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.191 (0) Total entities for the zip file: 300 directories, 1888 files (0 skipped as non-modified), 39.9 MB
+0000.195 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0000.198 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0000.203 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0000.206 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0000.209 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0000.213 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 600 files added (on-disk size: 0 KB)
+0000.216 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 700 files added (on-disk size: 0 KB)
+0000.217 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25.2 MB, 1888 files batched, 724 (724) added so far); re-opening (prior size: 0 KB)
+0001.373 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: size is now: 9.20 MB
+0001.376 (0) A useful amount of data was added after this amount of zip processing: 1.7 s (normalised: 1.7 s, rate: 14895.8 KB/s)
+0001.377 (0) Performance is good - will increase the amount of data we attempt to batch (time=1.7316019535065, normalised_time=1.7186057449399, max_time=1.3760750293732, data points known=1, old_max_bytes=26214400, new_max_bytes=91519768)
+0001.383 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 800 files added (on-disk size: 9373.4 KB)
+0001.386 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 900 files added (on-disk size: 9373.4 KB)
+0001.391 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 1000 files added (on-disk size: 9373.4 KB)
+0001.394 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 1100 files added (on-disk size: 9373.4 KB)
+0001.398 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 1200 files added (on-disk size: 9373.4 KB)
+0001.401 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 1300 files added (on-disk size: 9373.4 KB)
+0001.405 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 1400 files added (on-disk size: 9373.4 KB)
+0001.408 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 1500 files added (on-disk size: 9373.4 KB)
+0001.412 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 1600 files added (on-disk size: 9373.4 KB)
+0001.416 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 1700 files added (on-disk size: 9373.4 KB)
+0001.418 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (13.8 MB, 1888 files batched, 1001 (1725) added so far); re-opening (prior size: 9373.4 KB)
+0002.523 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: size is now: 13.00 MB
+0002.528 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.tmp: 1800 files added (on-disk size: 13270 KB)
+0002.740 (0) Creating zip file manifest (backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.list-temp.tmp)
+0002.749 (0) Successfully created zip file manifest (size: 163407)
+0002.896 (0) Created plugins zip (0) - 13571 KB in 2.8 s (4819.2 KB/s) (sha1: 45a11d896a72db411f9e3d66ca8426b9c822c977, sha256: 85aad39c26269ea3b7be77884b8c629405695fe0ba723404a5b9ae61cce1b51f)
+0002.901 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0002.901 (0) No remote despatch: user chose no remote backup service
+0002.902 (0) Recording as successfully uploaded: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip
+0002.903 (0) Deleting zip manifest (backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip.list.tmp)
+0002.907 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0002.909 (0) Number of backup sets in history: 0; groups (db): 1
+0002.910 (0) Number of backup sets in history: 0; groups (files): 1
+0002.911 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0002.914 (0) Beginning creation of dump of themes (split every: 400 MB)
+0002.964 (0) Total entities for the zip file: 90 directories, 439 files (0 skipped as non-modified), 32.2 MB
+0002.967 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0002.969 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0002.972 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0002.975 (0) Zip: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0003.716 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-themes.zip.tmp: size is now: 29.40 MB
+0003.730 (0) Creating zip file manifest (backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-themes.zip.list-temp.tmp)
+0003.734 (0) Successfully created zip file manifest (size: 30779)
+0004.656 (0) Created themes zip (0) - 30123.2 KB in 1.7 s (17313.9 KB/s) (sha1: 9f1f4ad1f06bbb53f68bcc6a37be36e9c312a835, sha256: ae2a693f01ba36e2768eea46fff2a78950c2c5b993fa4cd4ad8518d843530191)
+0004.665 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0004.666 (0) No remote despatch: user chose no remote backup service
+0004.667 (0) Recording as successfully uploaded: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-themes.zip
+0004.668 (0) Deleting zip manifest (backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-themes.zip.list.tmp)
+0004.671 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0004.672 (0) Number of backup sets in history: 0; groups (db): 1
+0004.673 (0) Number of backup sets in history: 0; groups (files): 1
+0004.674 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0004.683 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0004.684 (0) Looking for candidates to backup in: /Applications/XAMPP/xamppfiles/htdocs/hanlon-and-co-wp/wp-content/uploads
+0004.690 (0) finding files: 2022: adding to list (1)
+0004.700 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0004.707 (0) Total entities for the zip file: 3 directories, 12 files (0 skipped as non-modified), 9.5 MB
+0004.813 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-uploads.zip.tmp: size is now: 9.50 MB
+0004.825 (0) Creating zip file manifest (backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-uploads.zip.list-temp.tmp)
+0004.826 (0) Successfully created zip file manifest (size: 729)
+0004.943 (0) Created uploads zip (0) - 9764.7 KB in 0.2 s (40435.2 KB/s) (sha1: 6b741c83c2ae6dd6b0b1f287942d3f92f311fcaf, sha256: e5d2a0836eefd7f55cc39173572d97c3e6d51a8fbe8306999dfd9bccc906835e)
+0004.946 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0004.947 (0) No remote despatch: user chose no remote backup service
+0004.947 (0) Recording as successfully uploaded: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-uploads.zip
+0004.949 (0) Deleting zip manifest (backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-uploads.zip.list.tmp)
+0004.950 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0004.951 (0) Number of backup sets in history: 0; groups (db): 1
+0004.952 (0) Number of backup sets in history: 0; groups (files): 1
+0004.952 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0004.956 (0) Beginning backup of other directories found in the content directory (index: 0)
+0004.957 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0004.958 (0) Looking for candidates to backup in: /Applications/XAMPP/xamppfiles/htdocs/hanlon-and-co-wp/wp-content
+0004.958 (0) finding files: .DS_Store: adding to list (1)
+0004.959 (0) finding files: index.php: adding to list (2)
+0004.959 (0) finding files: mu-plugins: adding to list (3)
+0004.960 (0) finding files: plugins: skipping: this is the plugins directory
+0004.961 (0) finding files: themes: skipping: this is the themes directory
+0004.961 (0) finding files: updraft: skipping: this is the updraft directory
+0004.962 (0) finding files: upgrade: skipping: excluded by options
+0004.962 (0) finding files: uploads: skipping: this is the uploads directory
+0004.967 (0) Total entities for the zip file: 3 directories, 8 files (0 skipped as non-modified), 0 MB
+0004.978 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-others.zip.tmp: size is now: 0.00 MB
+0004.981 (0) Creating zip file manifest (backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-others.zip.list-temp.tmp)
+0004.981 (0) Successfully created zip file manifest (size: 461)
+0004.985 (0) Created others zip (0) - 9.3 KB in 0 s (457.3 KB/s) (sha1: bd9be4475e2e38a9120ed4acdac4510f461ef8dd, sha256: 710c295dba351db344cce55a48fee889b220ae3fc702fa353dddc49513a6f8f4)
+0004.987 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0004.988 (0) No remote despatch: user chose no remote backup service
+0004.989 (0) Recording as successfully uploaded: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-others.zip
+0004.990 (0) Deleting zip manifest (backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-others.zip.list.tmp)
+0004.991 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0004.992 (0) Number of backup sets in history: 0; groups (db): 1
+0004.993 (0) Number of backup sets in history: 0; groups (files): 1
+0004.993 (0) Retain: saving new backup history (sets now: 0) and finishing retain operation
+0004.999 (0) Saving backup status to database (elements: 8)
+0005.001 (0) Beginning creation of database dump (WordPress DB)
+0005.002 (0) SQL compatibility mode is: ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+0005.030 (0) Table wp_options: Total expected rows (via COUNT): 177
+0005.031 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0005.036 (0) Table wp_options: Rows added in this batch (next record: 1194): 173 (uncompressed bytes in this segment=52258) in 0.01 seconds
+0005.040 (0) Table wp_options: finishing file(s) (2, 10.6 KB)
+0005.044 (0) Table wp_users: Total expected rows (via COUNT): 1
+0005.044 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0005.047 (0) Table wp_users: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1365) in 0.00 seconds
+0005.050 (0) Table wp_users: finishing file(s) (2, 0.6 KB)
+0005.057 (0) Table wp_usermeta: Total expected rows (via COUNT): 30
+0005.058 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0005.060 (0) Table wp_usermeta: Rows added in this batch (next record: 30): 30 (uncompressed bytes in this segment=2658) in 0.01 seconds
+0005.064 (0) Table wp_usermeta: finishing file(s) (2, 1.3 KB)
+0005.071 (0) Table wp_commentmeta: Total expected rows (via COUNT): 0
+0005.072 (0) Table wp_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=684) in 0.01 seconds
+0005.076 (0) Table wp_commentmeta: finishing file(s) (2, 0.4 KB)
+0005.082 (0) Table wp_comments: Total expected rows (via COUNT): 1
+0005.083 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0005.085 (0) Table wp_comments: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=2097) in 0.01 seconds
+0005.088 (0) Table wp_comments: finishing file(s) (2, 0.7 KB)
+0005.113 (0) Table wp_links: Total expected rows (via COUNT): 0
+0005.117 (0) Table wp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1266) in 0.01 seconds
+0005.120 (0) Table wp_links: finishing file(s) (2, 0.5 KB)
+0005.163 (0) Table wp_postmeta: Total expected rows (approximate): 7374
+0005.235 (0) Table wp_postmeta: Rows added in this batch (next record: 6941): 6900 (uncompressed bytes in this segment=674476) in 0.11 seconds
+0005.243 (0) Table wp_postmeta: finishing file(s) (2, 54.7 KB)
+0005.272 (0) Table wp_posts: Total expected rows (via COUNT): 265
+0005.273 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0005.283 (0) Table wp_posts: Rows added in this batch (next record: 301): 265 (uncompressed bytes in this segment=129372) in 0.04 seconds
+0005.287 (0) Table wp_posts: finishing file(s) (2, 14.3 KB)
+0005.293 (0) Table wp_term_relationships: Total expected rows (approximate): 18
+0005.295 (0) Table wp_term_relationships: Rows added in this batch (next record: 100000): 18 (uncompressed bytes in this segment=920) in 0.00 seconds
+0005.300 (0) Table wp_term_relationships: finishing file(s) (2, 0.4 KB)
+0005.305 (0) Table wp_term_taxonomy: Total expected rows (via COUNT): 9
+0005.306 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0005.309 (0) Table wp_term_taxonomy: Rows added in this batch (next record: 9): 9 (uncompressed bytes in this segment=1202) in 0.01 seconds
+0005.314 (0) Table wp_term_taxonomy: finishing file(s) (2, 0.5 KB)
+0005.319 (0) Table wp_termmeta: Total expected rows (via COUNT): 0
+0005.321 (0) Table wp_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=657) in 0.00 seconds
+0005.326 (0) Table wp_termmeta: finishing file(s) (2, 0.4 KB)
+0005.333 (0) Table wp_terms: Total expected rows (via COUNT): 9
+0005.334 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0005.338 (0) Table wp_terms: Rows added in this batch (next record: 9): 9 (uncompressed bytes in this segment=1067) in 0.01 seconds
+0005.342 (0) Table wp_terms: finishing file(s) (2, 0.5 KB)
+0005.346 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_options.table.tmpr1195.gz (1/12/fopen): adding to final database dump
+0005.348 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_options.table.gz (2/12/fopen): adding to final database dump
+0005.349 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_users.table.tmpr2.gz (3/12/fopen): adding to final database dump
+0005.352 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_users.table.gz (4/12/fopen): adding to final database dump
+0005.356 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_usermeta.table.tmpr31.gz (5/12/fopen): adding to final database dump
+0005.359 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_usermeta.table.gz (6/12/fopen): adding to final database dump
+0005.360 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_commentmeta.table.tmpr0.gz (7/12/fopen): adding to final database dump
+0005.362 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_commentmeta.table.gz (8/12/fopen): adding to final database dump
+0005.363 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_comments.table.tmpr2.gz (9/12/fopen): adding to final database dump
+0005.365 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_comments.table.gz (10/12/fopen): adding to final database dump
+0005.367 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_links.table.tmpr0.gz (11/12/fopen): adding to final database dump
+0005.369 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_links.table.gz (12/12/fopen): adding to final database dump
+0005.370 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_postmeta.table.tmpr6942.gz (13/12/fopen): adding to final database dump
+0005.372 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_postmeta.table.gz (14/12/fopen): adding to final database dump
+0005.373 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_posts.table.tmpr302.gz (15/12/fopen): adding to final database dump
+0005.374 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_posts.table.gz (16/12/fopen): adding to final database dump
+0005.375 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_term_relationships.table.tmpr100001.gz (17/12/fopen): adding to final database dump
+0005.376 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_term_relationships.table.gz (18/12/fopen): adding to final database dump
+0005.377 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_term_taxonomy.table.tmpr10.gz (19/12/fopen): adding to final database dump
+0005.380 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_term_taxonomy.table.gz (20/12/fopen): adding to final database dump
+0005.381 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_termmeta.table.tmpr0.gz (21/12/fopen): adding to final database dump
+0005.382 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_termmeta.table.gz (22/12/fopen): adding to final database dump
+0005.383 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_terms.table.tmpr10.gz (23/12/fopen): adding to final database dump
+0005.383 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db-table-wp_terms.table.gz (24/12/fopen): adding to final database dump
+0005.401 (0) An error occurred while attempting to retrieve routine status (Column count of mysql.proc is wrong. Expected 21, found 20. Created with MariaDB 100108, now running 100316. Please use mysql_upgrade to fix this error - SHOW FUNCTION STATUS WHERE DB = 'hanlon_and_co_wp')
+0005.401 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db.gz: finished writing out complete database file (85.3 KB)
+0005.414 (0) Total database tables backed up: 12 (backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db.gz, size: 87509, sha1: 6b87dd3d078fad805c98587ede29ed1e8b420c96, sha256: 3c54f98eed2531896cb13c05a10df2358bb7db6511510368040bc5fc1f6d906e)
+0005.420 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-plugins.zip: plugins: This file has already been successfully uploaded
+0005.420 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-themes.zip: themes: This file has already been successfully uploaded
+0005.421 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-uploads.zip: uploads: This file has already been successfully uploaded
+0005.422 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-others.zip: others: This file has already been successfully uploaded
+0005.423 (0) backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db.gz: db: This file has not yet been successfully uploaded: will queue
+0005.424 (0) Saving backup history. Total backup size: 52.3 MB
+0005.427 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0005.431 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0005.432 (0) No remote despatch: user chose no remote backup service
+0005.434 (0) Recording as successfully uploaded: backup_2022-10-12-1705_Hanlon_amp_Co_18955daba5f3-db.gz
+0005.437 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0005.439 (0) Number of backup sets in history: 1; groups (db): 1
+0005.439 (0) Examining (for databases) backup set with group_id=0, nonce=18955daba5f3, datestamp=1665594357 (Oct 12 2022 17:05:57)
+0005.440 (0) This backup set is the backup set just made, so will not be deleted.
+0005.440 (0) Number of backup sets in history: 1; groups (files): 1
+0005.441 (0) Examining (for files) backup set with nonce=18955daba5f3, datestamp=1665594357 (Oct 12 2022 17:05:57)
+0005.441 (0) This backup set is the backup set just made, so will not be deleted.
+0005.442 (0) This backup set is the backup set just made, so will not be deleted.
+0005.443 (0) This backup set is the backup set just made, so will not be deleted.
+0005.443 (0) This backup set is the backup set just made, so will not be deleted.
+0005.443 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0005.445 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0005.449 (0) Resume backup (18955daba5f3, 0): finish run
+0005.451 (0) Decremented the semaphore (fd) by 1
+0005.452 (0) Semaphore (fd) unlocked
+0005.453 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0005.456 (0) No email will/can be sent - the user has not configured an email address.
+0005.457 (0) The backup apparently succeeded and is now complete
