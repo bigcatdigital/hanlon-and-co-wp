@@ -1,7 +1,11 @@
 <?php
 	/* Template Name: Profiles inner page template */ 
+	include __DIR__ . '/../php_includes/project_functions.php';
 	get_header();
 ?> 
+		<nav class="bc-breadcrumbs-nav bc-container" aria-label="Site breadcrumbs navigation" >
+			<?php echo do_breadcrumbs(); ?>
+		</nav>
 		<main id="main-site-content" class="bc-inner-page">
 			<section class="bc-container bc-inner-page__main-section">
 				<?php if (get_field('page-leader')) { 
@@ -62,7 +66,7 @@
 				<?php } ?>
 			</section><!-- // . bc-inner-page__main-->
 
-			<section class="bc-container bc-inner-page__section bc-profiles">
+			<section class="bc-container bc-inner-page__section bc-profiles ">
 				<?php if (get_field('staff-profiles-leader')) { ?>
 					<div class="bc-content-component">
 						<article class="bc-text-component">

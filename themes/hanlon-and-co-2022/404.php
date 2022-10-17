@@ -1,6 +1,4 @@
 <?php
-	
-	/* Template Name: Inner page template */ 
 	get_header();
 ?> 
 		

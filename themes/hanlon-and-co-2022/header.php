@@ -92,27 +92,6 @@
 						'theme_location' => 'main-navigation'
 					));
 				?>
-				<!-- <ul role="navigation"  class="bc-site-header__main-navigation__list">
-					<li class="bc-site-header__main-navigation__item"><a href="index.html">Home</a></li>
-					<li class="bc-site-header__main-navigation__item bc-show-hide">
-						<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle">Areas of Practice
-							<div class="bc-show-hide-icon__wrap">
-								<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
-								</svg>	
-							</div>
-						</a>
-						<ul class="bc-show-hide__body">
-							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="family-law.html">Family Law</a></li>
-							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="insolvency.html">Insolvency</a></li>
-							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="litigation-practice.html">Litgation</a></li>
-							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="probate.html">Probate</a></li>
-							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="conveyancing.html">Conveyancy</a></li>
-						</ul>	
-					</li>
-					<li class="bc-site-header__main-navigation__item"><a href="about.html">About</a></li>
-					<li class="bc-site-header__main-navigation__item bc-contact-link "><a class="bc-scroll-link" href="#contact-us">Contact</a></li>
-				</ul>	 -->
 			</div><!-- // .bc-site-header__main-navigation-wrap -->
 		</div><!-- // .bc-site-header__main-navigation  -->
 	</header><!-- // .bc-site-header -->

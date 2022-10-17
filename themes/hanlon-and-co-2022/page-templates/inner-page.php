@@ -1,6 +1,6 @@
 <?php
 	include __DIR__ . '/../php_includes/project_functions.php';
-	/* Template Name: Inner page template */ 
+	/* Template Name: Inner feature page template */ 
 	get_header();
 ?> 
 		<nav class="bc-breadcrumbs-nav bc-container" aria-label="Site breadcrumbs navigation" >

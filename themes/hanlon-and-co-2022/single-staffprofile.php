@@ -15,8 +15,10 @@
 						<img class="bc-profile-detail__intro__image" src="<?php echo $profile_photo['url'] ?>" alt="<?php echo $profile_photo['alt'] ?>">
 						<div class="bc-profile-detail__intro__text">
 							<?php if (get_field('profile-short-about')) { ?>
+							<svg class="svg-icon">
+								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#quote-left-serif"></use>
+							</svg>
 							<p class="">"<?php the_field('profile-short-about') ?>"</p>
-							
 							<?php } ?>
 						</div>
 					</div>	
