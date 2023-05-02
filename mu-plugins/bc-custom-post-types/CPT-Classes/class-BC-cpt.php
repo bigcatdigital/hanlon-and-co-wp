@@ -1,4 +1,4 @@
-	<?php 
+<?php 
 	/* 	Big Cat Custom Post Type base class
 		* Template for Cutsom Post Types in Wordpress builds
 		* The Shortcode is used for custom formatting
@@ -67,7 +67,7 @@
 			], $this->bc_cpt_args);
 			
 			register_post_type($this->bc_cpt_post_type, $this->bc_cpt_args );
-			flush_rewrite_rules();
+			//flush_rewrite_rules();
 		}//create_post_type()
 		
 		//Create Categories support
@@ -98,5 +98,4 @@
 		}
 		
 		
-	}//class BCCustomPostType
-?>	
+	}//class BCCustomPostType ?>

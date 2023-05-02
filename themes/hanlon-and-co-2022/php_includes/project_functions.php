@@ -27,7 +27,7 @@ function do_breadcrumbs() {
 		$breadcrumbs = '</svg>' . $breadcrumbs; 
 		$breadcrumbs =	'<use xlink:href="' . $svg_file . '"></use>' . $breadcrumbs;
 		$breadcrumbs = '<svg class="svg-icon bc-site-header__menu-link__close ">' . $breadcrumbs;
-		$breadcrumbs = '<a href="'. site_url() .'">' . Home . '</a>' . $breadcrumbs; 
+		$breadcrumbs = '<a href="'. site_url() .'">' . 'Home' . '</a>' . $breadcrumbs; 
 		$breadcrumbs = '<li>' . $breadcrumbs;
 	}
 	$breadcrumbs = '<ul class="bc-breadcrumbs-nav__list">' . $breadcrumbs;

@@ -1,38 +1,43 @@
 <?php
 	include __DIR__ . '/../php_includes/project_functions.php';
-	/* Template Name: Inner feature page template */ 
+	/* Template Name: Inner page template */ 
 	get_header();
 ?> 
 		<nav class="bc-breadcrumbs-nav bc-container" aria-label="Site breadcrumbs navigation" >
 			<?php echo do_breadcrumbs(); ?>
 		</nav>
 		<main id="main-site-content" class="bc-inner-page">
-			<section class="bc-container bc-inner-page__main-section">
+			<section class="bc-container bc-inner-page__section">
 				<?php if (get_field('page-leader')) { 
 					$page_leader = get_field('page-leader'); ?>
+				<!-- Page leader -->
 				<article class="bc-content-component bc-inner-page-heading">
 					<div class="bc-text-component "> 
 						<div class="bc-feature-header__col">
-							<p class="bc-content-label"><?php echo get_the_title(); ?></p>
 							<h1 class="bc-inner-page-heading__heading">
-								<?php echo $page_leader['leader-title'] ?>
+								<?php the_title(); ?>
 							</h1>
-							<?php if ($page_leader['leader-text']) { ?>
+						<?php if ($page_leader['leader-text']) { ?>
 							<p class="bc-intro-paragraph"><?php echo $page_leader['leader-text'] ?></p>
-							<?php } //get leader-text ?>
+						<?php } //get leader-text ?>
 						</div><!-- // .bc-feature-header__col -->
-					</div><!-- // .bc-feature-header -->
-				</article>
-				<?php if ($page_leader['leader-image']) {
+					</div><!-- // .bc-text-component -->
+				</article><!-- // .bc-inner-page-heading -->
+					<?php if ($page_leader['leader-image']) {
 					$leader_image = $page_leader['leader-image']; ?>
 				<div class="bc-content-component--media-padded bc-inner-page__feature-image">
 					<div class="bc-object-embed bc-media-embed--placeholder">
-						
 						<img src="<?php echo $leader_image['url'] ?>" alt="<?php echo $leader_image['alt'] ?>">
 					</div>
-				</div>
-				<?php } //end if $page_leader['leader_image'] ?>
+				</div><!-- // .bc-inner-page__feature-image -->
+					<?php } else { ?>
+					<div class="bc-text-component bc-inner-page-hr">
+						<hr>
+					</div>
+					<?php } // end if else get page-leader ?>
+				<!-- // Page leader -->
 				<?php } // end if get page-leader ?>
+				
 				<?php if (get_field('page-content#1')) { ?>
 				<div class="bc-content-component">
 					<article class="bc-text-component">
@@ -50,7 +55,7 @@
 				<?php if (get_field('lawyer-photo')) { 
 					$lawyer_photo = get_field('lawyer-photo');
 					?>
-				<div class="bc-content-component--text bc-inner-page__feature-image">
+				<div class="bc-content-component--text">
 					<div class="bc-text-component">
 						<div class="bc-object-embed bc-media-embed--placeholder">
 								<img src="<?php echo $lawyer_photo['url'] ?>" alt="<?php echo $lawyer_photo['alt'] ?>" />
@@ -65,18 +70,28 @@
 					</div>
 				</div>
 				<?php } ?>
-			</section><!-- // . bc-inner-page__main-->
-			<?php if (get_field('page-content#2') || (get_field('faqs') && !empty(get_field('faqs')))) { ?>
-			<section class="bc-container bc-inner-page__section">
+				<?php if (get_field('page-content#2')) { ?>
+				<!-- Page content #2 -->
 				<div class="bc-content-component">
-					<?php if (get_field('page-content#2')) { ?>
 					<article class="bc-text-component">
 						<?php the_field('page-content#2') ?>
-					</article><!-- // .bc-text-component-->
-					<?php } //end if page-content#2 ?>
-					<?php if (get_field('faqs') && !empty(get_field('faqs'))) { 
-						$faqs = get_field('faqs'); ?>
+					</article><!-- // .bc-text-component-->	
+				</div><!-- // .bc-content-component -->
+				<!-- // Page content #2 -->
+				<?php }//end if page-content#2 ?>
+			</section><!-- // . bc-inner-page__section-->
+			<?php if ((get_field('faqs') && !empty(get_field('faqs')))) {
+				$faqs = get_field('faqs'); 
+				if ($faqs['question#1'] && strcmp($faqs['question#1'], '') !== 0) { ?>
+				<!-- FAQs -->
+			<section class="bc-container bc-inner-page__section">
 					<article class="bc-text-component bc-faqs">
+						<?php if ($faqs['header']) { ?>
+							<h1><?php echo $faqs['header']; ?> </h1>
+						<?php }//end faqs header ?>
+						<?php if ($faqs['intro-text']) { 
+							echo $faqs['intro-text'];
+						}// end if faqs intro  ?>
 						<div class="bc-show-hide"> 
 							<?php if (strcmp($faqs['question#1'], '') !== 0 && strcmp($faqs['answer#1'], '') !== 0 ) { 
 								$this_question = $faqs['question#1']; 
@@ -86,7 +101,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -104,7 +119,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -122,7 +137,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -140,7 +155,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -158,7 +173,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -176,7 +191,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -194,7 +209,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -212,7 +227,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -230,7 +245,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -248,7 +263,7 @@
 								<h3><a href="javascript:void(0)" class="" ><?php echo $this_question; ?></a></h3>
 								<span class="bc-show-hide-icon__wrap">
 									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-										<use xlink:href="get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg')#close-x"></use>
+										<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 									</svg>	
 								</span>
 							</div><!-- // .bc-show-hide__header -->
@@ -258,14 +273,15 @@
 							</article><!-- // .bc-show-hide__body -->
 							<hr />
 							<?php } //question and answer#10 ?> 
-							
 						</div><!-- // .bc-show-hide -->
 					</article><!-- // .bc-text-component .bc-faqs-->
-					<?php }//if FAQs ?>
 				</div><!-- // .bc-content-component -->
-			</section><!-- // .bc-inner-page__section -->
-			<?php } //if page content #2 || FAQs ?>
+			</section>
+			<!-- // FAQs -->
+			<?php } //end if FAQs question#1 
+				}//if FAQs ?>
 		</main><!-- // #main-site-content -->
+		<div class="bc-section-hrs--reversed .bc-bg-shade-f0"></div><!-- // .bc-section-hrs -->
 		<?php
 			get_footer();
 		?> 

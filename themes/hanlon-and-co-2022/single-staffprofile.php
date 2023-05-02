@@ -6,7 +6,7 @@
 			<?php echo do_breadcrumbs(); ?>
 		</nav>
 		<main id="main-site-content" class="bc-inner-page">
-			<section class="bc-container bc-inner-page__main-section">
+			<section class="bc-container bc-inner-page__section">
 				<article class="bc-text-component">
 					<h1>	<?php the_title() ;?></h1>
 					<?php if (get_field('profile-photo')) { 
@@ -33,6 +33,7 @@
 			</section><!-- // . bc-inner-page__main-->
 			
 		</main><!-- // #main-site-content -->
+		<div class="bc-section-hrs--reversed .bc-bg-shade-f0"></div><!-- // .bc-section-hrs -->
 		<?php
 			get_footer();
 		?> 

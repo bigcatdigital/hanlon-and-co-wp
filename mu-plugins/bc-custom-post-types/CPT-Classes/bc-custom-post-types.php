@@ -416,11 +416,4 @@ $admissions_process_cta = new BCAdmissionsProcess('Admissions Process', 'admissi
 
 /* Uninstall */
 //Ensure data is not deleted, moves to Post
-
-
-
-
-
-
-
 ?>
