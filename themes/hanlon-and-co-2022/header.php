@@ -15,57 +15,67 @@
 	<!-- <link rel="preload" href="./assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
 	<!-- <noscript><link rel="stylesheet" href="./assets/css/style.css"></noscript> -->
 	<script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
-	<!-- Global site tag (gtag.js) - Google Analytics 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EB511QMQDJ"></script> -->
 </head>  
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0X22Q6CJ7"></script>
+
 <body>
 	<script>
-		//window['ga-disable-G-EB511QMQDJ'] = true;
+		console.log('Header cookies consent check');
+		window['ga-disable-G-E0X22Q6CJ7'] = true;
 		/* Analytics gtag object */
-		// window.dataLayer = window.dataLayer || [];
-		// function gtag(){dataLayer.push(arguments);}
-		// gtag('js', new Date());
-		// gtag('config', 'G-EB511QMQDJ'); 
-		// let cookiesPreferences = document.cookie.split('; ').find((row) => {
-		// 	return row.startsWith('bc-cookies-preferences');
-		// }); 
-		// cookiesPreferences = (cookiesPreferences) ? cookiesPreferences.split('=')[1] : undefined ;
-		// console.log(cookiesPreferences);
-		// if (cookiesPreferences === 'submitted') {
-		// 	const gaAnalytics = document.cookie.split('; ').find((row) => {
-		// 		return row.startsWith('bc-ga-analytics');
-		// 	}).split('=')[1]; 
-		// 	if (gaAnalytics === 'denied') {
-		// 		gtag('consent', 'update', {
-		// 			'analytics_storage': 'denied'
-		// 		});
-		// 	} else {
-		// 		gtag('consent', 'update', {
-		// 			'analytics_storage': 'default'
-		// 		});
-		// 	}
-		// 	const gaAdStorage = document.cookie.split('; ').find((row) => {
-		// 		return row.startsWith('bc-google-ad-storage');
-		// 	}).split('=')[1]; 
-		// 	if (gaAdStorage === 'denied') {
-		// 		gtag('consent', 'update', {
-		// 			'ad_storage': 'denied'
-		// 		});
-		// 	} else {
-		// 		gtag('consent', 'update', {
-		// 			'ad_storage': 'granted'
-		// 		});
-		// 	}
-		// } else {
-		// 	gtag('consent', 'default', {
-		// 		'ad_storage': 'denied',
-		// 		'analytics_storage': 'denied'
-		// 	});
-		// 	let theBody = document.querySelector('html');
-		// 	window.setTimeout(() => {
-		// 		theBody.classList.add('bc-cookies-not-set');	
-		// 	}, 3000);
-		// }
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-E0X22Q6CJ7'); 
+		let cookiesPreferences = document.cookie.split('; ').find((row) => {
+			return row.startsWith('bc-cookies-preferences');
+		}); 
+		console.log(`Cookeis preferences: ${cookiesPreferences}`);
+		cookiesPreferences = (cookiesPreferences) ? cookiesPreferences.split('=')[1] : undefined ;
+		console.log(`Cookeis preferences:  ${cookiesPreferences}`);
+		if (cookiesPreferences === 'submitted') {
+			const gaAnalytics = document.cookie.split('; ').find((row) => {
+				return row.startsWith('bc-ga-analytics');
+			}).split('=')[1]; 
+			if (gaAnalytics === 'denied') {
+				gtag('consent', 'update', {
+					'analytics_storage': 'denied'
+				});
+			} else {
+				gtag('consent', 'update', {
+					'analytics_storage': 'default'
+				});
+			}
+			const gaAdStorage = document.cookie.split('; ').find((row) => {
+				return row.startsWith('bc-google-ad-storage');
+			}).split('=')[1]; 
+			if (gaAdStorage === 'denied') {
+				gtag('consent', 'update', {
+					'ad_storage': 'denied'
+				});
+			} else {
+				gtag('consent', 'update', {
+					'ad_storage': 'granted'
+				});
+			}
+			let theBody = document.querySelector('html');
+			theBody.classList.remove('bc-cookies-not-set');	
+			theBody.classList.remove('bc-modal-visible');	
+			
+			
+		} else {
+			gtag('consent', 'default', {
+				'ad_storage': 'denied',
+				'analytics_storage': 'denied'
+			});
+			let theBody = document.querySelector('html');
+			window.setTimeout(() => {
+				theBody.classList.add('bc-cookies-not-set');	
+				theBody.classList.add('bc-modal-visible');	
+			}, 0);
+		}
 	</script>
 <div class="bc-body-wrap">
 	<nav class="bc-is-hidden" aria-label="Skip to main content link">

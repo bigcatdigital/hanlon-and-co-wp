@@ -84,8 +84,8 @@
 				$faqs = get_field('faqs'); 
 				if ($faqs['question#1'] && strcmp($faqs['question#1'], '') !== 0) { ?>
 				<!-- FAQs -->
-			<section class="bc-container bc-inner-page__section">
-					<article class="bc-text-component bc-faqs">
+			<section class="bc-container bc-inner-page__section bc-faqs">
+					<article class="bc-text-component ">
 						<?php if ($faqs['header']) { ?>
 							<h1><?php echo $faqs['header']; ?> </h1>
 						<?php }//end faqs header ?>
@@ -281,7 +281,7 @@
 			<?php } //end if FAQs question#1 
 				}//if FAQs ?>
 		</main><!-- // #main-site-content -->
-		<div class="bc-section-hrs--reversed .bc-bg-shade-f0"></div><!-- // .bc-section-hrs -->
+		
 		<?php
 			get_footer();
 		?> 
