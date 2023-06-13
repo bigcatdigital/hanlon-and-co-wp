@@ -18,18 +18,16 @@
 				<article class="bc-text-component">
 				<?php $contact_post = new WP_Query(array(
 						'post_type' => 'contactinfo',
-						'numberposts' => 1
-					));	 
-					//var_dump($contact_post);
-					if ($contact_post->have_posts()) {
-						while ($contact_post->have_posts()) {
-							$contact_post->the_post(); 
-							if (get_field('contact-address')) { ?>
+						'numberposts' => 1 ));	 
+						if ($contact_post->have_posts()) {
+							while ($contact_post->have_posts()) {
+								$contact_post->the_post(); 
+								if (get_field('contact-address')) { ?>
 							<h2>Address</h2>
-							<p><?php the_field('contact-address'); ?></p>
+							<p><?php echo get_field('contact-address'); ?></p>
 							<? } //end if contact-address ?>
 							<?php if (get_field('contact-phone-number')) { ?>
-							<p><a href="tel:<?php the_field('contact-phone-number') ?>"><?php the_field('contact-phone-number') ?></a></p>	
+							<p><a href="tel:<?php the_field('contact-phone-number'); ?>"><?php the_field('contact-phone-number'); ?></a></p>	
 							<?php }// end if contact-phone-number ?>
 							<?php if (get_field('contact-map')) { ?>
 							<h2>Get directions</h2>
@@ -38,13 +36,10 @@
 								<?php the_field('contact-map'); ?>
 							</div>
 							<?php }// end if contact-map ?>
-				<?php	}//end while $contact_post
-					}//end if $contact_posts
-					wp_reset_postdata(); ?>
+				<?php }//end while $contact_post
+					}//end if $contact_posts 
+					wp_reset_postdata() ;?>
 				</article><!-- // .bc-text-component -->
 			</section><!-- // .bc-inner-page__section -->
 		</main><!-- // #main-site-content -->
-		<?php
-			get_footer();
-		?> 
-		
+<?php get_footer(); ?> 

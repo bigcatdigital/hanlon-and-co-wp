@@ -17,13 +17,12 @@
 	<script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
 </head>  
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0X22Q6CJ7"></script>
-
 <body>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0X22Q6CJ7"></script>
 	<script>
 		console.log('Header cookies consent check');
-		window['ga-disable-G-E0X22Q6CJ7'] = true;
+		//window['ga-disable-G-E0X22Q6CJ7'] = true;
 		/* Analytics gtag object */
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
@@ -39,11 +38,15 @@
 			const gaAnalytics = document.cookie.split('; ').find((row) => {
 				return row.startsWith('bc-ga-analytics');
 			}).split('=')[1]; 
+			
 			if (gaAnalytics === 'denied') {
+				console.log(`Do consent not granted`);
 				gtag('consent', 'update', {
 					'analytics_storage': 'denied'
 				});
+
 			} else {
+				console.log(`Do consent granted`);
 				gtag('consent', 'update', {
 					'analytics_storage': 'default'
 				});
@@ -63,8 +66,6 @@
 			let theBody = document.querySelector('html');
 			theBody.classList.remove('bc-cookies-not-set');	
 			theBody.classList.remove('bc-modal-visible');	
-			
-			
 		} else {
 			gtag('consent', 'default', {
 				'ad_storage': 'denied',

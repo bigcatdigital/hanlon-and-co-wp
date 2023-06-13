@@ -89,7 +89,7 @@
 		'hierarchical'        => false,
 		'supports'            => array( 'title', 'author', 'thumbnail'),
 		'has_archive'         => true,
-		'rewrite'             => array( 'slug' => 'testimonials' ),
+		'rewrite'             => array( 'slug' => 'client-testimonials' ),
 		'query_var'           => true
 	);
 	new BCCustomPostType('Contact info', 'contactinfo', $contact_args);
@@ -126,12 +126,12 @@
 		'hierarchical'        => false,
 		'supports'            => array( 'title', 'author', 'thumbnail'),
 		'has_archive'         => true,
-		'rewrite'             => array( 'slug' => 'staffprofles' ),
+		'rewrite'             => array( 'slug' => 'staff' ),
 		'query_var'           => true
 	);
 	new BCCustomPostType('Staff profile', 'staffprofile', $profile_args);
 
-
+flush_rewrite_rules();
 	/* Activation */
 	//Check version, upgrades
 

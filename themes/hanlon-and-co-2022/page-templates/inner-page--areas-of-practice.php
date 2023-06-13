@@ -13,7 +13,6 @@
 			<div class="bc-content-component--text bc-feature-header"> 
 				<div class="bc-feature-header__col"> 
 					<h1 class="bc-feature-header__heading"><?php the_field('areas-of-practice-title-text') ?></h1>
-					<?php the_field('areas-of-practice-leader-text') ?>
 				</div><!-- // .bc-feature-header__col -->
 			</div><!-- // .bc-feature-header -->
 			<?php } ?>
@@ -75,11 +74,6 @@
 					</a><!-- // .bc-two-column-layout__text-column -->
 				</div><!-- // .bc-areas-of-practice__main__area -->
 			</div><!-- // .bc-areas-of-practice__main -->	
-			<div class="bc-content-component--text bc-feature-sub-header bc-areas-of-practice__other__header bc-bg-shade-f0"> 
-				<div class="bc-feature-header__col">
-					<h2 class="bc-feature-sub-header__heading"><?php the_field('other-areas-of-practice-title'); ?></h2>
-				</div><!-- // .bc-feature-header__col -->
-			</div><!-- // .bc-feature-header -->
 			<div class="bc-content-component bc-areas-of-practice__other ">
 				<?php $this_area_of_practice = get_field('other-areas-of-practice#1'); ?>
 				<div class="bc-areas-of-practice__other__area bc-areas-of-practice__litigation bc-match-height">

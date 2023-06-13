@@ -100,6 +100,7 @@
 	}
 	add_action( 'init', 'custom_project_settings' );
 
+	
 
 
 	//Preload scripts
@@ -129,6 +130,11 @@
 // 	}
 // 	add_filter('rest_prepare_' . $post_type, 'bc_rest_prepare_post', 10, 3);
 // }
-
+add_filter( 'staffprofile_post_type_args', 'rewrite_profiles_slug' );
+function rewrite_profiles_slug( $args ) {
+  $args['rewrite']['slug'] = 'staff';
+  return $args;
+}
+flush_rewrite_rules();
 
 ?>

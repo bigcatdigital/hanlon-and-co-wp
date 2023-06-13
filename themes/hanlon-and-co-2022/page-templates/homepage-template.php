@@ -141,13 +141,6 @@
 					</div><!-- // .bc-areas-of-practice__main__area -->
 					<?php } // end if get featured-area-of-practice#2 ?>
 				</div><!-- // .bc-areas-of-practice__main -->	
-				<?php if (get_field('other-areas-of-practice-title') && strcmp(get_field('other-areas-of-practice-title'), '') !== 0) { ?>
-				<div class="bc-content-component--text bc-feature-sub-header bc-areas-of-practice__other__header bc-bg-shade-f0"> 
-					<div class="bc-feature-header__col">
-						<h2 class="bc-feature-sub-header__heading"><?php echo get_field('other-areas-of-practice-title'); ?></h2>
-					</div><!-- // .bc-feature-header__col -->
-				</div><!-- // .bc-feature-header -->
-				<?php } // end if other areas of practice title ?>
 				<?php if ( get_field('other-areas-of-practice#1') && strcmp(get_field('other-areas-of-practice#1')['area-title'], '') !== 0) {
 					$this_area_of_practice = get_field('other-areas-of-practice#1'); ?>
 				<div class="bc-content-component bc-areas-of-practice__other">
