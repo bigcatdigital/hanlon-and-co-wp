@@ -20,9 +20,6 @@
 						<?php if ($page_leader['leader-text']) { ?>
 							<p class="bc-intro-paragraph"><?php echo $page_leader['leader-text'] ?></p>
 						<?php } //get leader-text ?>
-						<?php if ($page_leader['in-page-links'] && strcmp($page_leader['in-page-links'], '') !== 0) {
-							echo $page_leader['in-page-links'] ; 
-						} // end if in-page-links ?>
 						</div><!-- // .bc-feature-header__col -->
 					</div><!-- // .bc-text-component -->
 				</article><!-- // .bc-inner-page-heading -->
