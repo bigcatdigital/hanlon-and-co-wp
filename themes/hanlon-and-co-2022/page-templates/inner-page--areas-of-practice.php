@@ -6,7 +6,7 @@
 		<nav class="bc-breadcrumbs-nav bc-container" aria-label="Site breadcrumbs navigation" >
 			<?php echo do_breadcrumbs(); ?>
 		</nav>
-		<main id="main-site-content" class="bc-inner-page">
+		<main id="main-site-content" class="bc-inner-page" data-page-template="bc-inner-page">
 		<section id="" class="bc-container bc-areas-of-practice bc-has-footer">
 		<article class="bc-content-component">
 			<?php if (get_field('areas-of-practice-title-text')) { ?>

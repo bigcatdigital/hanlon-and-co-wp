@@ -3,7 +3,7 @@
 	get_header();
 ?> 
 	<!-- Hero -->
-	<section id="main-site-content" class="bc-hero bc-hero--full-screen bc-has-border-rad-next" aria-label="Full screen hero">
+	<section id="main-site-content" class="bc-hero bc-hero--full-screen bc-has-border-rad-next" data-page-template="bc-homepage" aria-label="Full screen hero">
 		<?php if (get_field('hero-feature-image')) { 
 				$hero_image = get_field('hero-feature-image'); ?>
 		<picture class="bc-hero__media">
@@ -32,7 +32,7 @@
 	</section>
 	<!-- // Hero -->
 	<div class="bc-has-border-rad__wrap">
-		<section id="" class="bc-container bc-areas-of-practice bc-has-border-rad bc-has-ampersand">
+		<section class="bc-container bc-areas-of-practice bc-has-border-rad bc-has-ampersand">
 			<svg id="ampersand-disc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 				<title>Hanlon and Co logo mark</title>
 				<circle id="disk" class="cls-1" cx="50" cy="50" r="50"/>
@@ -49,16 +49,13 @@
 				<?php if (get_field('areas-of-practice-title-text')) { ?>
 				<div class="bc-content-component--text bc-feature-header"> 
 					<div class="bc-feature-header__col"> 
-
 						<p class="bc-content-label">Areas of Practice</p>
-
 						<h1 class="bc-feature-header__heading"><?php the_field('areas-of-practice-title-text') ?></h1>
 						<?php the_field('areas-of-practice-leader-text') ?>
 					</div><!-- // .bc-feature-header__col -->
 				</div><!-- // .bc-feature-header -->
-				<?php } ?>
-								
-				<div class="bc-areas-of-practice__main bc-content-component bc-grid bc-match-height-wrap">
+				<?php }// end if areas-of-practice-title-text ?>
+				<div class="bc-areas-of-practice__main bc-content-component bc-grid">
 					<?php
 						if (get_field('featured-area-of-practice#1')) {
 						$this_area_of_practice = get_field('featured-area-of-practice#1'); ?>
@@ -141,206 +138,210 @@
 					</div><!-- // .bc-areas-of-practice__main__area -->
 					<?php } // end if get featured-area-of-practice#2 ?>
 				</div><!-- // .bc-areas-of-practice__main -->	
+			</article><!-- // .bc-content-component -->
+			<article class="bc-content-component">
 				<?php if ( get_field('other-areas-of-practice#1') && strcmp(get_field('other-areas-of-practice#1')['area-title'], '') !== 0) {
 					$this_area_of_practice = get_field('other-areas-of-practice#1'); ?>
-				<div class="bc-content-component bc-areas-of-practice__other">
-					<div class="bc-areas-of-practice__other__area">
-						<div class="bc-areas-of-practice__other__area__header">
-							<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
-							<svg class="svg-icon bc-areas-of-practice__other__icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
-							</svg>	
-							<?php }// end if area-icon ?>
-							<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
-						</div><!-- // .bc-areas-of-practice__other__header --> 
-						<?php if ($this_area_of_practice['area-leader']) { ?>
-						<p><?php echo $this_area_of_practice['area-leader'] ?></p>
-						<?php }// end if area-leader ?>
-						<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
-						<p class="bc-arrow-link">
-							<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
-							<svg class="svg-icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
-							</svg>
-						</p>
-						<?php }// end if area-link ?>
-					</div><!-- // .bc-areas-of-practice__other__area -->
-					<?php }// end if other-areas-of-practice#1 ?>
-					<?php if ( get_field('other-areas-of-practice#2') && strcmp(get_field('other-areas-of-practice#2')['area-title'], '') !== 0) {
-						$this_area_of_practice = get_field('other-areas-of-practice#2'); ?>
-					<div class="bc-areas-of-practice__other__area">
-						<div class="bc-areas-of-practice__other__area__header">
-							<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
-							<svg class="svg-icon bc-areas-of-practice__other__icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
-							</svg>	
-							<?php }// end if area-icon ?>
-							<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
-						</div><!-- // .bc-areas-of-practice__other__header -->
-						<?php if ($this_area_of_practice['area-leader']) { ?>
-						<p><?php echo $this_area_of_practice['area-leader']; ?></p>
-						<?php }// end if area-leader ?>
-						<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
-						<p class="bc-arrow-link">
-							<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
-							<svg class="svg-icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
-							</svg>
-						</p>
-						<?php }// end if area-link ?>
-					</div><!-- // .bc-areas-of-practice__other__area -->
-					<?php }// end if other-areas-of-practice#2 ?>
-					<?php if ( get_field('other-areas-of-practice#3') && strcmp(get_field('other-areas-of-practice#3')['area-title'], '') !== 0) {
-						$this_area_of_practice = get_field('other-areas-of-practice#3'); ?>
-					<div class="bc-areas-of-practice__other__area">
-						<div class="bc-areas-of-practice__other__area__header">
-							<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
-							<svg class="svg-icon bc-areas-of-practice__other__icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
-							</svg>	
-							<?php }// end if area-icon ?>
-							<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
-						</div><!-- // .bc-areas-of-practice__other__header -->
-						<?php if ($this_area_of_practice['area-leader']) { ?>
-						<p><?php echo $this_area_of_practice['area-leader'] ?></p>
-						<?php }// end if area-leader ?>
-						<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
-						<p class="bc-arrow-link">
-							<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
-							<svg class="svg-icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
-							</svg>
-						</p>
-						<?php }// end if area-link ?>
-					</div><!-- // .bc-areas-of-practice__other__area -->
-					<?php }// end if other-areas-of-practice#3 ?>
-					<?php if ( get_field('other-areas-of-practice#4') && strcmp(get_field('other-areas-of-practice#4')['area-title'], '') !== 0) {
-						$this_area_of_practice = get_field('other-areas-of-practice#4'); ?>
-					<div class="bc-areas-of-practice__other__area">
-						<div class="bc-areas-of-practice__other__area__header">
-							<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
-							<svg class="svg-icon bc-areas-of-practice__other__icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
-							</svg>	
-							<?php }// end if area-icon ?>
-							<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
-						</div><!-- // .bc-areas-of-practice__other__header -->
-						<?php if ($this_area_of_practice['area-leader']) { ?>
-						<p><?php echo $this_area_of_practice['area-leader'] ?></p>
-						<?php }// end if area-leader ?>
-						<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
-						<p class="bc-arrow-link">
-							<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
-							<svg class="svg-icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
-							</svg>
-						</p>
-						<?php }// end if area-link ?>
-					</div><!-- // .bc-areas-of-practice__other__area -->
-					<?php }// other-areas-of-practice#4 ?>
-					<?php if ( get_field('other-areas-of-practice#5') && strcmp(get_field('other-areas-of-practice#5')['area-title'], '') !== 0) {
-						$this_area_of_practice = get_field('other-areas-of-practice#5'); ?>
-					<div class="bc-areas-of-practice__other__area">
-						<div class="bc-areas-of-practice__other__area__header">
-							<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
-							<svg class="svg-icon bc-areas-of-practice__other__icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
-							</svg>	
-							<?php }// end if area-icon ?>
-							<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
-						</div><!-- // .bc-areas-of-practice__other__header -->
-						<?php if ($this_area_of_practice['area-leader']) { ?>
-						<p><?php echo $this_area_of_practice['area-leader'] ?></p>
-						<?php }// end if area-leader ?>
-						<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
-						<p class="bc-arrow-link">
-							<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
-							<svg class="svg-icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
-							</svg>
-						</p>
-						<?php }// end if area-link ?>
-					</div><!-- // .bc-areas-of-practice__other__area -->
-					<?php }// other-areas-of-practice#5 ?>
-					<?php if ( get_field('other-areas-of-practice#6') && strcmp(get_field('other-areas-of-practice#6')['area-title'], '') !== 0) {
-						$this_area_of_practice = get_field('other-areas-of-practice#6'); ?>
-					<div class="bc-areas-of-practice__other__area">
-						<div class="bc-areas-of-practice__other__area__header">
-							<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
-							<svg class="svg-icon bc-areas-of-practice__other__icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
-							</svg>	
-							<?php }// end if area-icon ?>
-							<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
-						</div><!-- // .bc-areas-of-practice__other__header -->
-						<?php if ($this_area_of_practice['area-leader']) { ?>
-						<p><?php echo $this_area_of_practice['area-leader'] ?></p>
-						<?php }// end if area-leader ?>
-						<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
-						<p class="bc-arrow-link">
-							<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
-							<svg class="svg-icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
-							</svg>
-						</p>
-						<?php }// end if area-link ?>
-					</div><!-- // .bc-areas-of-practice__other__area -->
-					<?php }// other-areas-of-practice#6 ?>
-					<?php if ( get_field('other-areas-of-practice#7') && strcmp(get_field('other-areas-of-practice#7')['area-title'], '') !== 0) {
-						$this_area_of_practice = get_field('other-areas-of-practice#7'); ?>
-					<div class="bc-areas-of-practice__other__area">
-						<div class="bc-areas-of-practice__other__area__header">
-							<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
-							<svg class="svg-icon bc-areas-of-practice__other__icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
-							</svg>	
-							<?php }// end if area-icon ?>
-							<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
-						</div><!-- // .bc-areas-of-practice__other__header -->
-						<?php if ($this_area_of_practice['area-leader']) { ?>
-						<p><?php echo $this_area_of_practice['area-leader'] ?></p>
-						<?php }// end if area-leader ?>
-						<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
-						<p class="bc-arrow-link">
-							<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
-							<svg class="svg-icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
-							</svg>
-						</p>
-						<?php }// end if area-link ?>
-					</div><!-- // .bc-areas-of-practice__other__area -->
-					<?php }// other-areas-of-practice#7 ?>
-					<?php if ( get_field('other-areas-of-practice#8') && strcmp(get_field('other-areas-of-practice#8')['area-title'], '') !== 0) {
-						$this_area_of_practice = get_field('other-areas-of-practice#8'); ?>
-					<div class="bc-areas-of-practice__other__area">
-						<div class="bc-areas-of-practice__other__area__header">
-							<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none') !== 0) { ?>
-							<svg class="svg-icon bc-areas-of-practice__other__icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
-							</svg>	
-							<?php }// end if area-icon ?>
-							<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
-						</div><!-- // .bc-areas-of-practice__other__header -->
-						<?php if ($this_area_of_practice['area-leader']) { ?>
-						<p><?php echo $this_area_of_practice['area-leader'] ?></p>
-						<?php }// end if area-leader ?>
-						<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
-						<p class="bc-arrow-link">
-							<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
-							<svg class="svg-icon">
-								<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
-							</svg>
-						</p>
-						<?php }// end if area-link ?>
-					</div><!-- // .bc-areas-of-practice__other__area -->
-				<?php }// other-areas-of-practice#8 ?>
-				</div><!-- .bc-areas-of-practice__other -->
+				<div class="bc-content-component">
+					<div class="bc-areas-of-practice__other"> 
+						<div class="bc-areas-of-practice__other__area">
+							<div class="bc-areas-of-practice__other__area__header">
+								<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
+								<svg class="svg-icon bc-areas-of-practice__other__icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
+								</svg>	
+								<?php }// end if area-icon ?>
+								<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
+							</div><!-- // .bc-areas-of-practice__other__header --> 
+							<?php if ($this_area_of_practice['area-leader']) { ?>
+							<p><?php echo $this_area_of_practice['area-leader'] ?></p>
+							<?php }// end if area-leader ?>
+							<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
+							<p class="bc-arrow-link">
+								<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
+								<svg class="svg-icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
+								</svg>
+							</p>
+							<?php }// end if area-link ?>
+						</div><!-- // .bc-areas-of-practice__other__area -->
+						<?php }// end if other-areas-of-practice#1 ?>
+						<?php if ( get_field('other-areas-of-practice#2') && strcmp(get_field('other-areas-of-practice#2')['area-title'], '') !== 0) {
+							$this_area_of_practice = get_field('other-areas-of-practice#2'); ?>
+						<div class="bc-areas-of-practice__other__area">
+							<div class="bc-areas-of-practice__other__area__header">
+								<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
+								<svg class="svg-icon bc-areas-of-practice__other__icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
+								</svg>	
+								<?php }// end if area-icon ?>
+								<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
+							</div><!-- // .bc-areas-of-practice__other__header -->
+							<?php if ($this_area_of_practice['area-leader']) { ?>
+							<p><?php echo $this_area_of_practice['area-leader']; ?></p>
+							<?php }// end if area-leader ?>
+							<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
+							<p class="bc-arrow-link">
+								<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
+								<svg class="svg-icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
+								</svg>
+							</p>
+							<?php }// end if area-link ?>
+						</div><!-- // .bc-areas-of-practice__other__area -->
+						<?php }// end if other-areas-of-practice#2 ?>
+						<?php if ( get_field('other-areas-of-practice#3') && strcmp(get_field('other-areas-of-practice#3')['area-title'], '') !== 0) {
+							$this_area_of_practice = get_field('other-areas-of-practice#3'); ?>
+						<div class="bc-areas-of-practice__other__area">
+							<div class="bc-areas-of-practice__other__area__header">
+								<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
+								<svg class="svg-icon bc-areas-of-practice__other__icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
+								</svg>	
+								<?php }// end if area-icon ?>
+								<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
+							</div><!-- // .bc-areas-of-practice__other__header -->
+							<?php if ($this_area_of_practice['area-leader']) { ?>
+							<p><?php echo $this_area_of_practice['area-leader'] ?></p>
+							<?php }// end if area-leader ?>
+							<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
+							<p class="bc-arrow-link">
+								<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
+								<svg class="svg-icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
+								</svg>
+							</p>
+							<?php }// end if area-link ?>
+						</div><!-- // .bc-areas-of-practice__other__area -->
+						<?php }// end if other-areas-of-practice#3 ?>
+						<?php if ( get_field('other-areas-of-practice#4') && strcmp(get_field('other-areas-of-practice#4')['area-title'], '') !== 0) {
+							$this_area_of_practice = get_field('other-areas-of-practice#4'); ?>
+						<div class="bc-areas-of-practice__other__area">
+							<div class="bc-areas-of-practice__other__area__header">
+								<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
+								<svg class="svg-icon bc-areas-of-practice__other__icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
+								</svg>	
+								<?php }// end if area-icon ?>
+								<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
+							</div><!-- // .bc-areas-of-practice__other__header -->
+							<?php if ($this_area_of_practice['area-leader']) { ?>
+							<p><?php echo $this_area_of_practice['area-leader'] ?></p>
+							<?php }// end if area-leader ?>
+							<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
+							<p class="bc-arrow-link">
+								<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
+								<svg class="svg-icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
+								</svg>
+							</p>
+							<?php }// end if area-link ?>
+						</div><!-- // .bc-areas-of-practice__other__area -->
+						<?php }// other-areas-of-practice#4 ?>
+						<?php if ( get_field('other-areas-of-practice#5') && strcmp(get_field('other-areas-of-practice#5')['area-title'], '') !== 0) {
+							$this_area_of_practice = get_field('other-areas-of-practice#5'); ?>
+						<div class="bc-areas-of-practice__other__area">
+							<div class="bc-areas-of-practice__other__area__header">
+								<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
+								<svg class="svg-icon bc-areas-of-practice__other__icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
+								</svg>	
+								<?php }// end if area-icon ?>
+								<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
+							</div><!-- // .bc-areas-of-practice__other__header -->
+							<?php if ($this_area_of_practice['area-leader']) { ?>
+							<p><?php echo $this_area_of_practice['area-leader'] ?></p>
+							<?php }// end if area-leader ?>
+							<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
+							<p class="bc-arrow-link">
+								<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
+								<svg class="svg-icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
+								</svg>
+							</p>
+							<?php }// end if area-link ?>
+						</div><!-- // .bc-areas-of-practice__other__area #5-->
+						<?php }// other-areas-of-practice#5 ?>
+						<?php if ( get_field('other-areas-of-practice#6') && strcmp(get_field('other-areas-of-practice#6')['area-title'], '') !== 0) {
+							$this_area_of_practice = get_field('other-areas-of-practice#6'); ?>
+						<div class="bc-areas-of-practice__other__area">
+							<div class="bc-areas-of-practice__other__area__header">
+								<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
+								<svg class="svg-icon bc-areas-of-practice__other__icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
+								</svg>	
+								<?php }// end if area-icon ?>
+								<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
+							</div><!-- // .bc-areas-of-practice__other__header -->
+							<?php if ($this_area_of_practice['area-leader']) { ?>
+							<p><?php echo $this_area_of_practice['area-leader'] ?></p>
+							<?php }// end if area-leader ?>
+							<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
+							<p class="bc-arrow-link">
+								<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
+								<svg class="svg-icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
+								</svg>
+							</p>
+							<?php }// end if area-link ?>
+						</div><!-- // .bc-areas-of-practice__other__area #6 -->
+						<?php }// other-areas-of-practice#6 ?>
+						<?php if ( get_field('other-areas-of-practice#7') && strcmp(get_field('other-areas-of-practice#7')['area-title'], '') !== 0) {
+							$this_area_of_practice = get_field('other-areas-of-practice#7'); ?>
+						<div class="bc-areas-of-practice__other__area">
+							<div class="bc-areas-of-practice__other__area__header">
+								<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none')) { ?>
+								<svg class="svg-icon bc-areas-of-practice__other__icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
+								</svg>	
+								<?php }// end if area-icon ?>
+								<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
+							</div><!-- // .bc-areas-of-practice__other__header -->
+							<?php if ($this_area_of_practice['area-leader']) { ?>
+							<p><?php echo $this_area_of_practice['area-leader'] ?></p>
+							<?php }// end if area-leader ?>
+							<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
+							<p class="bc-arrow-link">
+								<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
+								<svg class="svg-icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
+								</svg>
+							</p>
+							<?php }// end if area-link ?>
+						</div><!-- // .bc-areas-of-practice__other__area #7-->
+						<?php }// other-areas-of-practice#7 ?>
+						<?php if ( get_field('other-areas-of-practice#8') && strcmp(get_field('other-areas-of-practice#8')['area-title'], '') !== 0) {
+							$this_area_of_practice = get_field('other-areas-of-practice#8'); ?>
+						<div class="bc-areas-of-practice__other__area">
+							<div class="bc-areas-of-practice__other__area__header">
+								<?php if ($this_area_of_practice['area-icon'] && strcmp($this_area_of_practice['area-icon'], 'none') !== 0) { ?>
+								<svg class="svg-icon bc-areas-of-practice__other__icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#<?php echo $this_area_of_practice['area-icon']?>"></use>
+								</svg>	
+								<?php }// end if area-icon ?>
+								<h3 class="bc-areas-of-practice__other__area__heading"><?php echo $this_area_of_practice['area-title'] ?></h3>
+							</div><!-- // .bc-areas-of-practice__other__header -->
+							<?php if ($this_area_of_practice['area-leader']) { ?>
+							<p><?php echo $this_area_of_practice['area-leader'] ?></p>
+							<?php }// end if area-leader ?>
+							<?php if ($this_area_of_practice['area-link'] && strcmp($this_area_of_practice['area-link']['url'], '') !== 0) { ?>
+							<p class="bc-arrow-link">
+								<a href="<?php echo $this_area_of_practice['area-link']['url']; ?>"><?php echo $this_area_of_practice['area-link']['title'] ?></a>
+								<svg class="svg-icon">
+									<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#arrow"></use>
+								</svg>
+							</p>
+							<?php }// end if area-link ?>
+						</div><!-- // .bc-areas-of-practice__other__area #8 -->
+						<?php }// other-areas-of-practice#8 ?>
+					</div><!-- .bc-areas-of-practice__other -->
+				</div><!--- // .bc-content-component -->
 			</article><!-- // .bc-content-component -->
 		</section><!-- // .bc-container.bc-areas-of-practice -->
 	</div><!-- // .bc-has-border-rad__wrap -->
 	<?php if (get_field('about-leader-text')) { ?>
-	<section class="bc-container bc-about-us">
-		<article class="bc-two-column-layout--wide bc-bg-brand-primary"> 
+	<section class="bc-container bc-about-us bc-has-border-rad-next">
+		<article class="bc-two-column-layout--wide"> 
 		<?php $about_image = get_field('about-image'); 
 					if (!empty($about_image)) {
 				?>
@@ -350,7 +351,7 @@
 				</picture>
 			</div>
 			<?php } ?>
-			<div class="bc-two-column-layout--wide__text">
+			<div class="bc-two-column-layout--wide__text  bc-bg-brand-primary">
 				<p class="bc-content-label"><?php the_field('about-label'); ?></p>
 				<h2 class="bc-bg-text bc-two-column-layout--wide__heading"><?php the_field('about-leader-text'); ?></h2>
 				<?php $about_link = get_field('about-link'); 
@@ -367,44 +368,62 @@
 		</article>
 	</section><!-- // .bc-container.bc-about-us -->
 	<?php }//end if get about-leader-text  ?>
-	<?php 
-	if (get_field('get-testimonials')) {
-		$testimonial_type = get_field('testimonial-type');
-		$post_type = 'clienttestimonial';
-		
+	<?php if (get_field('get-testimonials')) {
+		$testimonial_types = get_field('testimonial-type');
+		$testimonial_language = get_field('testimonial-language');
+		$post_type = 'clienttestimonial'; 
 		$testimonials_posts = new WP_Query(array(
 			'post_type' => $post_type,
-			'meta_key' => 'testimonial-category',
-			'meta_value' => (in_array('all', $testimonial_type)) ? '' : $testimonial_type
+			'posts_per_page' => -1,
+			'meta_query' => array(
+				array(
+					'key' => 'testimonial-category', 
+					'value' => $testimonial_types
+				), 
+				array(
+					'key' => 'testimonial-language', 
+					'value' => $testimonial_language
+				)
+			)
 		));	
-	?>
-	<section class="bc-container bc-testimonials bc-bg-shade-f0" aria-label="Flickity text slider">
+		if ($testimonials_posts->have_posts()) { ?>
+	<div class="bc-has-border-rad__wrap bc-testimonials">
+		<section class="bc-container bc-testimonials bc-has-border-rad" aria-label="Flickity text slider">
+			<svg id="border-radius-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+				<defs>
+					<style>.cls-1{fill:none;}</style>
+				</defs>
+				<title>top-right-radius</title>
+				<path id="border-radius__curve" class="cls-1" d="M99.85,0c0,.51,0,1,0,1.51A98.49,98.49,0,0,1,1.4,100H100V0ZM0,100H1.4c-.47,0-.93,0-1.4,0Z"/>
+			</svg>
+			<div class="bc-content-component--text">
+				<h1 class="bc-content-label">Testimonials</h1> 
+			</div>
 			<div class="bc-testimonials__quote-icon bc-content-component--text">
 				<svg class="svg-icon">
 					<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#quote-left-serif"></use>
 				</svg>
 			</div>	
 			<div class="bc-flickity bc-testimonials__body bc-flickity--text-slider"> 
-				<?php if ($testimonials_posts->have_posts()) {
+				<?php
 					while ($testimonials_posts->have_posts()) {
 					$testimonials_posts->the_post(); ?>
 				<article class="bc-flickity__slide" aria-label="Text slide #1"> 
 					<p class="bc-testimonials__text"><?php the_field('testimonial-text') ?></p>
 					<?php if (get_field('client-description')) { ?>
 					<p class="bc-testimonials__attribution">&mdash; <?php the_field('client-description') ?> 
-						<?php if (strcmp(get_field('testimonial-category'), 'all') !== 0) { ?>
+						
 						<!-- <span class="bc-testimonials__attribution"><?php echo "&mdash; " . ucfirst(get_field('testimonial-category')); ?></span></p> -->
-						<?php }// end if client-description !== 'all' ?>
+						
 					<?php } ?>
 				</article><!-- // .bc-card bc-card--plain-text -->
-				<?php }
-					}//end if have_posts()
-					wp_reset_postdata();  
-				?>
+				<?php } //end while have_posts ?>
 			</div><!-- //.bc-flickity -->
 		</section><!-- // Flickity text slider -->
-	<?php }// end if get-testimonials?> 
-	<div class="bc-section-hrs--reversed .bc-bg-shade-f0"></div>
+	</div><!-- // .bc-has-border-rad__wrap bc-testimonials -->
+	<?php }//end if have_posts()
+		wp_reset_postdata();  
+	}// end if get-testimonials ?> 
 	<?php
 		get_footer();
 	?> 

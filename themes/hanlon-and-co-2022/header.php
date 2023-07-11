@@ -95,7 +95,7 @@
 				<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
 			</svg>
 		</a>
-		<div id="site-main-navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation ">
+		<div aria-label="Main site navigation" class="bc-site-header__main-navigation ">
 			<hr />
 			<div class="bc-site-header__main-navigation-wrap bc-content-component--text">
 				<?php 
@@ -103,6 +103,31 @@
 						'theme_location' => 'main-navigation'
 					));
 				?>
+				<div id="show-hide-wrap" class="bc-show-hide-icon__wrap" style="display: none;">
+					<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
+						<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#close-x"></use>
+					</svg>	
+				</div>
+				<script>
+					const mainNav = document.querySelector('#menu-main-site-navigation');
+					const navLis = mainNav.querySelectorAll('li');
+					navLis.forEach((navLi) =>  {
+						if (navLi.querySelector('ul')) {
+							const subMenu = navLi.querySelector('ul');
+							const showHideWrap = document.querySelector('#show-hide-wrap');
+							const newShowHideWrap = showHideWrap.cloneNode('deep');
+							newShowHideWrap.removeAttribute('id');
+							newShowHideWrap.setAttribute('style', '');
+							const navLiLink = navLi.querySelector('a');
+							navLiLink.appendChild(newShowHideWrap);
+							navLiLink.classList.add('bc-show-hide__header', 'bc-show-hide__toggle');
+
+							subMenu.style.maxHeight = 0;
+							subMenu.classList.add('bc-show-hide__body');
+							navLi.classList.add('bc-show-hide');
+						}
+					});
+				</script>
 			</div><!-- // .bc-site-header__main-navigation-wrap -->
 		</div><!-- // .bc-site-header__main-navigation  -->
 	</header><!-- // .bc-site-header -->

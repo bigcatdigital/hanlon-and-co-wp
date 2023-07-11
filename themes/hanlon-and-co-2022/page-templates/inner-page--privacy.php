@@ -1,31 +1,32 @@
 <?php
-	/* Template Name: Privacy inner page template */ 
+	include __DIR__ . '/../php_includes/project_functions.php';
+	/* Template Name: Privacy template */ 
 	get_header();
 ?> 
-		<main id="main-site-content" class="bc-inner-page">
-			<section class="bc-container bc-inner-page__main-section">
-				
+		
+		<main id="main-site-content" class="bc-inner-page bc-inner-page--simple" data-page-template="bc-inner-page-simple">
+			<nav class="bc-breadcrumbs-nav bc-container" aria-label="Site breadcrumbs navigation" >
+				<?php echo do_breadcrumbs(); ?>
+			</nav>
+			<section class="bc-container bc-inner-page__section bc-inner-page__main-section bc-has-border-rad-next">		
 				<div class="bc-content-component">
 					<article class="bc-text-component">
-					<h1>Your data on our website</h1>
-						<p>Our site uses third-party cookies to store data about your visit, each of these is set by our use of Google Analytics (GA4) scripts. We use the information they create to find ways to better serve you each time you visit the site.</p>
-						<p>These cookies will store information to:</p>
-						<ul>
-							<li>Distinguish you from other users</li>
-							<li>Distinguish each visit to the site you and other users make to the site.</li>
-						</ul>
-						<p>We also use our own functional cookies so that the site works to your satisfaction. They help us remember some of your preferences when visiting, they are required so we don't allow visitors to disable them.</p>	
-						<p>No personally identifiable data is stored about you.</p>	
-						<div>
+						<div class="bc-feature-header__col">
+							<?php while (have_posts()) {
+								the_post() ; ?>	
+							<h1><?php the_title(); ?></h1>	
+							<?php the_content();  
+							}//end while have_posts() ?>
+						<div><!-- // .bc-feature-header__col -->
 							<form class="bc-privacy-form" name="bc-privacy-form" id="bc-privacy-form" action="" method="post">
 								<script>
 									let cookiesPreferences = document.cookie.split('; ').find((row) => {
-										 return row.startsWith('bc-cookies-preferences');
-									 });
+										return row.startsWith('bc-cookies-preferences');
+									});
 									cookiesPreferences = (cookiesPreferences) ? cookiesPreferences.split('=')[1] : undefined ;
 									let analyticsPrefs = document.cookie.split('; ').find((row) => {
-										 return row.startsWith('bc-ga-analytics');
-									 });
+										return row.startsWith('bc-ga-analytics');
+									});
 									analyticsPrefs = (analyticsPrefs) ? analyticsPrefs.split('=')[1] : undefined ;
 									// let adsPrefs = document.cookie.split('; ').find((row) => {
 									//  	return row.startsWith('bc-google-ad-storage');
@@ -85,29 +86,11 @@
 									/* Show confirmation */
 									let $docBody = document.querySelector('body');
 									$docBody.classList.add('bc-snack-bar-visible');
-									// if (privacyForm['google-ad-storage'].checked) {
-										
-									// 	bcFunctions.setCookie('bc-google-ad-storage', 'denied', {
-									// 		expires: expiryDate
-									// 	});
-									// 	bcFunctions.setCookie('bc-cookies-preferences', 'submitted', {
-									// 		expires: expiryDate
-									// 	});
-									// } else {
-									// 	bcFunctions.setCookie('bc-google-ad-storage', 'granted', {
-									// 		expires: expiryDate
-									// 	});
-									// 	bcFunctions.setCookie('bc-cookies-preferences', 'submitted', {
-									// 		expires: expiryDate
-									// 	});
-									// }
 								});
 							</script>
-						</div>
 					</article><!-- // .bc-text-component -->
 				</div><!-- // .bc-content-component -->
 			</section><!-- // . bc-inner-page__main-->
-
 		</main><!-- // #main-site-content -->
 		<?php
 			get_footer();
