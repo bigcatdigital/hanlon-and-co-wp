@@ -374,7 +374,6 @@
 		$post_type = 'clienttestimonial'; 
 		$testimonials_posts = new WP_Query(array(
 			'post_type' => $post_type,
-			'posts_per_page' => -1,
 			'meta_query' => array(
 				array(
 					'key' => 'testimonial-category', 
