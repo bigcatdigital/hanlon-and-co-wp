@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bc-page-loading " lang="en">
+<html class="bc-page-loading " lang="en, zh-Hans">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
 	<script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
 </head>  
 
-<body>
+<body class="bc-inner-page--cn">
 	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0X22Q6CJ7"></script>
 	<script>
@@ -83,20 +83,20 @@
 		<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
 	</nav>
 	<header class="bc-site-header bc-container">
-		<a title="Site hompepage " class="bc-site-header__home-link bc-site-logo" href="<?php echo site_url(); ?>">
+		<a title="Site hompepage " class="bc-site-header__home-link bc-site-logo bc-is-english" href="<?php echo site_url(); ?>">
 			Hanlon <span>&amp;</span> Co. 
 		</a>
 		<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
 		<div class="bc-site-header__nav-icons">
-			<span class="bc-site-header__language-toggle--cn ">
+			<span class="bc-site-header__language-toggle--cn bc-is-hidden">
 				<a href="javacript:void(0)" class="">中文网站</a>
 				<span class="bc-is-english">(Chinese site)</span>
 			</span>
-			<span class="bc-site-header__language-toggle--en bc-is-hidden">
+			<span class="bc-site-header__language-toggle--en">
 				<a href="javacript:void(0)" class="">英文网站</a>
 				<span class="bc-is-english">(English site)</span>
 			</span>
-			<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
+			<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link bc-is-hidden" title="Site Menu">
 				<svg class="svg-icon bc-site-header__menu-link__menu ">
 					<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#menu-thin"></use>
 				</svg>
@@ -105,7 +105,6 @@
 				</svg>
 			</a>
 		</div><!-- // .bc-site-header__nav-icons -->
-		
 		<div aria-label="Main site navigation" class="bc-site-header__main-navigation ">
 			<hr />
 			<div class="bc-site-header__main-navigation-wrap bc-content-component--text">

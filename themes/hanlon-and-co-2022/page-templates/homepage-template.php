@@ -1,9 +1,9 @@
 <?php
 	/* Template Name: Homepage template */
-	get_header();
+	get_header('header');
 ?> 
 	<!-- Hero -->
-	<section id="main-site-content" class="bc-hero bc-hero--full-screen bc-has-border-rad-next" data-page-template="bc-homepage" aria-label="Full screen hero">
+	<section id="main-site-content" class="bc-hero bc-hero--full-screen bc-has-border-rad-next" data-page-template="bc-homepage"  aria-label="Full screen hero">
 		<?php if (get_field('hero-feature-image')) { 
 				$hero_image = get_field('hero-feature-image'); ?>
 		<picture class="bc-hero__media">
@@ -424,6 +424,6 @@
 		wp_reset_postdata();  
 	}// end if get-testimonials ?> 
 	<?php
-		get_footer();
+		get_footer('cn-footer');
 	?> 
 	
