@@ -15,7 +15,7 @@
 				<?php echo do_breadcrumbs(); ?>
 			</nav>
 			<section class="bc-container bc-inner-page__section bc-inner-page__main-section <?php echo  (!$faqs_present) ? 'bc-has-border-rad-next' : '' ; ?> ">
-				<?php if (get_field('page-leader')) { 
+				<?php if (get_field('page-leader') && strcmp('page-leader', '') !== 0) { 
 					$page_leader = get_field('page-leader'); ?>
 				<!-- Page leader -->
 				<article class="bc-content-component bc-inner-page-heading bc-has-border-rad-next">
@@ -319,16 +319,16 @@
 			<?php } //end if FAQs question#1 
 				}//if FAQs ?>
 			<?php if (get_field('get-testimonials')) {
-				$testimonial_types = get_field('testimonial-type');
+				$testimonial_type = get_field('testimonial-type');
+				$testimonial_type = (strcmp('all', $testimonial_type) === 0) ? '' : $testimonial_type ;
 				$testimonial_language = get_field('testimonial-language');
 				$post_type = 'clienttestimonial'; 
 				$testimonials_posts = new WP_Query(array(
 					'post_type' => $post_type,
-					'posts_per_page' => -1,
 					'meta_query' => array(
 						array(
 							'key' => 'testimonial-category', 
-							'value' => $testimonial_types
+							'value' => $testimonial_type
 						), 
 						array(
 							'key' => 'testimonial-language', 
@@ -347,7 +347,7 @@
 						<path id="border-radius__curve" class="cls-1" d="M99.85,0c0,.51,0,1,0,1.51A98.49,98.49,0,0,1,1.4,100H100V0ZM0,100H1.4c-.47,0-.93,0-1.4,0Z"/>
 					</svg>
 					<div class="bc-content-component--text">
-						<h1 class="bc-content-label"><?php echo (count($testimonial_types) === 1) ? '<strong>' . ucfirst(the_field('testimonial-type')) . '</strong> / testimonials' : 'Testimonials'  ?></h1> 
+						<h1 class="bc-content-label"><?php echo (count($testimonial_type) === 1) ? '<strong>' . ucfirst(the_field('testimonial-type')) . '</strong> / testimonials' : 'Testimonials'  ?></h1> 
 					</div>
 					<div class="bc-testimonials__quote-icon bc-content-component--text">
 						<svg class="svg-icon">
@@ -363,7 +363,7 @@
 							<?php if (get_field('client-description')) { ?>
 							<p class="bc-testimonials__attribution">&mdash; <?php the_field('client-description') ?> 
 								
-								<!-- <span class="bc-testimonials__attribution"><?php echo "&mdash; " . ucfirst(the_field('testimonial-category')); ?></span></p> -->
+								<!-- <span class="bc-testimonials__attribution"><?php echo "&mdash; " . ucfirst(the_field('testimonial-category')[0]); ?></span></p> -->
 							<?php } ?>
 						</article><!-- // .bc-card bc-card--plain-text -->
 						<?php } //end while have_posts ?>

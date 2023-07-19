@@ -87,6 +87,7 @@
 		add_theme_support('title-tag');	
 		register_nav_menu('main-navigation',__( 'Main navigation' ));
 		register_nav_menu('footer-navigation',__( 'Footer navigation' ));
+		register_nav_menu('cn-en-navigation',__( 'Cn/En navigation' ));
 	
 	}
 	add_action('after_setup_theme', 'project_features');

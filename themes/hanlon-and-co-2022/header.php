@@ -88,14 +88,11 @@
 		</a>
 		<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
 		<div class="bc-site-header__nav-icons">
-			<span class="bc-site-header__language-toggle--cn ">
-				<a href="javacript:void(0)" class="">中文网站</a>
-				<span class="bc-is-english">(Chinese site)</span>
-			</span>
-			<span class="bc-site-header__language-toggle--en bc-is-hidden">
-				<a href="javacript:void(0)" class="">英文网站</a>
-				<span class="bc-is-english">(English site)</span>
-			</span>
+			<?php 
+				wp_nav_menu(array(
+					'theme_location' => 'cn-en-navigation'
+				));
+			?>
 			<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
 				<svg class="svg-icon bc-site-header__menu-link__menu ">
 					<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg') ?>#menu-thin"></use>
