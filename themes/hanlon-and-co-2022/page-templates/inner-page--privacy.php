@@ -82,7 +82,7 @@
 											expires: expiryDate
 										});
 									}
-									expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+									expiryDate = new Date(Date.now() + (28 * 24 * 60 * 60 * 1000)).toUTCString();
 									/* Show confirmation */
 									let $docBody = document.querySelector('body');
 									$docBody.classList.add('bc-snack-bar-visible');

@@ -70,7 +70,7 @@
 
 	function build_project_styles() {
 		
-		wp_enqueue_style('fonts', '//fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Oswald:wght@200;400;500;600&display=swap', NULL, time());
+		wp_enqueue_style('fonts', 'Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:wght@400;700;900&display=swap', NULL, time());
 		wp_enqueue_style('cn-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Noto+Serif+SC:wght@400;700&display=swap', NULL, time());
 		
 

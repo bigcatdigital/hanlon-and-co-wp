@@ -2,12 +2,14 @@
 	/* Template Name: About page template */ 
 	include __DIR__ . '/../php_includes/project_functions.php';
 	get_header();
+	$faqs_present = false;
 	if ((get_field('faqs') && !empty(get_field('faqs')))) {
 		$faqs = get_field('faqs'); 
 		if ($faqs['question#1'] && strcmp($faqs['question#1'], '') !== 0) {
 			$faqs_present = true;
 		}
 	}
+	$page_leader_img_present = false;
 ?> 
 		<main id="main-site-content" class="bc-inner-page" data-page-template="bc-inner-page">
 			<nav class="bc-breadcrumbs-nav bc-container" aria-label="Site breadcrumbs navigation" >

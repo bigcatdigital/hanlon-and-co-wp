@@ -5,8 +5,8 @@
 		<nav class="bc-breadcrumbs-nav bc-container" aria-label="Site breadcrumbs navigation" >
 			<?php echo do_breadcrumbs(); ?>
 		</nav>
-		<main id="main-site-content" class="bc-inner-page bc-inner-page--simple">
-			<section class="bc-container bc-inner-page__section bc-inner-page__main-section bc-has-border-rad-next">
+		<main id="main-site-content" class="bc-inner-page">
+			<section class="bc-container bc-inner-page__section">
 				<article class="bc-text-component">
 					<h1>	<?php the_title() ;?></h1>
 					<?php if (get_field('profile-photo')) { 
@@ -31,6 +31,7 @@
 					<?php } //end if profile-video ?>
 				</article><!-- // .bc-text-component -->
 			</section><!-- // . bc-inner-page__main-->
+			
 		</main><!-- // #main-site-content -->
 		<div class="bc-section-hrs--reversed .bc-bg-shade-f0"></div><!-- // .bc-section-hrs -->
 		<?php

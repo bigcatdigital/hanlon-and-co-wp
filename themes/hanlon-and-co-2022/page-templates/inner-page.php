@@ -3,12 +3,14 @@
 	/* Template Name: Inner page template */ 
 	get_header();
 	/* Check if FAQs are used */
+	$faqs_present = false;
 	if ((get_field('faqs') && !empty(get_field('faqs')))) {
 		$faqs = get_field('faqs'); 
-		if ($faqs['question#1'] && strcmp($faqs['question#1'], '') !== 0) {
+		if ($faqs['question#1'] && !empty($faqs['question#1']) !== 0) {
 			$faqs_present = true;
 		}
 	}
+	$page_leader_img_present = false;
 ?> 
 		<main id="main-site-content" class="bc-inner-page" data-page-template="bc-inner-page">
 			<nav class="bc-breadcrumbs-nav bc-container" aria-label="Site breadcrumbs navigation" >
@@ -319,8 +321,7 @@
 			<?php } //end if FAQs question#1 
 				}//if FAQs ?>
 			<?php if (get_field('get-testimonials')) {
-				$testimonial_type = get_field('testimonial-type');
-				$testimonial_type = (strcmp('all', $testimonial_type) === 0) ? '' : $testimonial_type ;
+				$testimonial_types = get_field('testimonial-type');
 				$testimonial_language = get_field('testimonial-language');
 				$post_type = 'clienttestimonial'; 
 				$testimonials_posts = new WP_Query(array(
@@ -328,7 +329,7 @@
 					'meta_query' => array(
 						array(
 							'key' => 'testimonial-category', 
-							'value' => $testimonial_type
+							'value' => $testimonial_types
 						), 
 						array(
 							'key' => 'testimonial-language', 

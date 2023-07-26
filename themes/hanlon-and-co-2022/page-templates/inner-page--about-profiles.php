@@ -7,7 +7,7 @@
 			<nav class="bc-breadcrumbs-nav bc-container" aria-label="Site breadcrumbs navigation" data-page-template="bc-inner-page-simple">
 				<?php echo do_breadcrumbs(); ?>
 			</nav>
-			<section class="bc-container bc-inner-page__section bc-profiles bc-inner-page__main-section bc-has-border-rad-next ">
+			<section class="bc-container bc-inner-page__section bc-profiles bc-inner-page__main-section bc-has-border-rad-next">
 				<article class="bc-content-component">
 					<div class="bc-text-component "> 
 						<div class="bc-feature-header__col">
@@ -33,7 +33,9 @@
 							if ($profile_posts->have_posts()) {
 								while ($profile_posts->have_posts()) {
 									$profile_posts->the_post(); 
-									$profile_image = get_field('profile-photo'); ?>
+									$profile_image = get_field('profile-photo'); 
+									$profile_sort_order = get_field('profile-sort-order');
+									if ($profile_sort_order && $profile_sort_order !== 0) { ?>
 						<article class="bc-card bc-profile-card bc-match-height">
 							<div class="bc-card__body">
 								<?php if ($profile_image['url'] && strcmp($profile_image['url'], '') !== 0) { ?>
@@ -48,7 +50,9 @@
 								<p><a href="<?php echo get_permalink(); ?>">Read more here</a></p>
 							</div>
 						</article><!-- // .bc-profile-card -->
-						<?php }//end while profile_posts 
+						<?php 
+									}//end if profile_sort_order !== 0
+								}//end while profile_posts 
 							}//end if profile_posts
 							wp_reset_postdata(); ?>
 					</div><!-- / .bc-grid -->	
